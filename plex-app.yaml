@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: 'https://plexinc.github.io/pms-docker'
     chart: 'pms-docker'
-    targetRevision: '1.0.0' # Pin the chart version
+    targetRevision: '1.1.2' # Pin the chart version
     
     # All of our custom values are embedded here
     helm:

@@ -13,7 +13,7 @@ spec:
   
   # This section points directly to the Helm repository
   source:
-    repoURL: 'https://github.com/plexinc/pms-docker'
+    repoURL: 'https://plexinc.github.io/pms-docker'
     chart: 'pms-docker'
     targetRevision: '1.1.2' # Pin the chart version
     

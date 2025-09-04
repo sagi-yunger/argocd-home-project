@@ -7,4 +7,4 @@ version: 0.1.0
 dependencies:
 - name: pms-docker
   version: "1.15.0" # Locking a specific version for stability
-  repository: "https://plexinc.github.io/helm-charts/"
+  repository: "https://plexinc.github.io/pms-docker/"

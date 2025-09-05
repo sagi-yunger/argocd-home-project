@@ -8,6 +8,9 @@ pms-docker:
   service:
     type: LoadBalancer # Change to NodePort if you don't have a Load Balancer
     port: 32400
+    
+  podAnnotations:
+    "container.apparmor.security.beta.kubernetes.io/plex-media-server": "unconfined"
 
   persistence:
     config:

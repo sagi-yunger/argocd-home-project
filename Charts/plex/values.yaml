@@ -1,27 +1,36 @@
-# These values will be passed to the subchart named pms-docker
-pms-docker:
+# charts/plex-wrapper/values.yaml
+
+plex-media-server:
+  # This annotation is a good proactive measure to prevent security profile issues.
+  podAnnotations:
+    "container.apparmor.security.beta.kubernetes.io/plex-media-server": "unconfined"
+
   image:
-    tag: plexpass # or any other version you choose
+    tag: plexpass
 
   timezone: "Asia/Jerusalem"
 
   service:
-    type: LoadBalancer # Change to NodePort if you don't have a Load Balancer
-    port: 32400
-    
-  podAnnotations:
-    "container.apparmor.security.beta.kubernetes.io/plex-media-server": "unconfined"
+    type: NodePort
 
   persistence:
     config:
       enabled: true
-      storageClass: "local-path" # The default in k3s
+      storageClass: "local-path"
+      accessMode: ReadWriteOnce
+      size: 15Gi
+
+    transcode:
+      enabled: true
+      storageClass: "local-path"
       accessMode: ReadWriteOnce
       size: 20Gi
 
+    # This section is now correctly formatted and will be recognized.
     media:
       enabled: true
-      type: hostPath # Direct mapping to a folder on the server
-      hostPath: "/home/sagi/sagi" # <--- Change this to your actual media path!
+      type: hostPath
+      # ❗️ IMPORTANT: Double-check that this path is correct on your server!
+      hostPath: "/home/sagi/sagi"
       accessMode: ReadWriteOnce
-      size: 100Gi # A symbolic size
+      size: 100Gi

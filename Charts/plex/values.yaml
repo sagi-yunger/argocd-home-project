@@ -27,7 +27,7 @@ plex-media-server:
       size: 20Gi
 
     # This section is now correctly formatted and will be recognized.
-    media:
+    movies:
       enabled: true
       type: hostPath
       # ❗️ IMPORTANT: Double-check that this path is correct on your server!

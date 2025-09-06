@@ -33,4 +33,4 @@ plex-media-server:
       # ❗️ IMPORTANT: Double-check that this path is correct on your server!
       hostPath: "/home/sagi/sagi"
       accessMode: ReadWriteOnce
-      size: 100Gi
+      size: 15Gi
